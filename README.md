@@ -2,6 +2,10 @@
 
 Grade verified live contracts on the hardhat network.
 
+## Requirements
+
+- Node.js >= 22.10 (required by Hardhat 3)
+
 ```
 git clone https://github.com/austintgriffith/speedrun-grader
 cd speedrun-grader

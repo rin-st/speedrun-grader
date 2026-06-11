@@ -1,23 +1,20 @@
 {
   "dependencies": {
-    "@nomicfoundation/hardhat-network-helpers": "~1.0.11",
     "@zk-kit/lean-imt.sol": "^2.0.1",
     "axios": "^0.24.0",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "dotenv": "^11.0.0",
-    "ethers": "^6.13.0",
+    "ethers": "^6.13.2",
     "express": "^4.17.2",
     "https": "^1.0.0",
     "nodemon": "^2.0.15",
-    "ts-node": "^10.9.1",
-    "typechain": "^8.3.2",
-    "typescript": "^5.8.2"
+    "poseidon-solidity": "0.0.5"
   },
   "scripts": {
     "server": "nodemon --ignore hardhat/",
     "compile": "cd hardhat && hardhat compile",
-    "test": "cd hardhat && REPORT_GAS=true hardhat test --network hardhat"
+    "test": "cd hardhat && hardhat test --network hardhat --gas-stats"
   },
   "nodemonConfig": {
     "ignore": [
@@ -25,14 +22,21 @@
     ]
   },
   "packageManager": "yarn@3.2.3",
+  "engines": {
+    "node": ">=22.10.0"
+  },
   "devDependencies": {
-    "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
-    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-ethers": "^4",
+    "@nomicfoundation/hardhat-ethers-chai-matchers": "^3",
+    "@nomicfoundation/hardhat-mocha": "^3",
+    "@nomicfoundation/hardhat-network-helpers": "^3",
+    "@nomicfoundation/hardhat-typechain": "^3",
     "@openzeppelin/contracts": "~5.0.2",
-    "@types/chai": "^5.2.2",
-    "@types/mocha": "~10.0.8",
-    "chai": "^4.5.0",
-    "hardhat": "^2.22.10",
-    "hardhat-gas-reporter": "^2.2.1"
+    "@types/mocha": "^10.0.10",
+    "chai": "^5",
+    "hardhat": "^3.4.5",
+    "mocha": "^11",
+    "tsx": "^4.21.0",
+    "typescript": "^5.8.2"
   }
 }

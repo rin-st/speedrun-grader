@@ -3,6 +3,11 @@ const path = require("path");
 const readline = require("readline");
 const challenges = require("./challenges.js");
 
+// TEMPORARY (for testing): the HH3 test files currently live on the per-challenge
+// `-hhv3` branches. REMOVE this suffix before merging — by then the hhv3 branches
+// are merged into the main challenge branches.
+const BRANCH_SUFFIX = "-hhv3";
+
 // Create readline interface for user input
 const rl = readline.createInterface({
   input: process.stdin,
@@ -146,7 +151,7 @@ async function downloadAllTestFiles(options = {}) {
       const downloadUrl = getGitHubRawUrl(
         challengeData.github,
         repoFilePath,
-        challengeData.name
+        `${challengeData.name}${BRANCH_SUFFIX}`
       );
 
       // Destination file path
@@ -195,7 +200,7 @@ async function downloadAllTestFiles(options = {}) {
           const contractDownloadUrl = getGitHubRawUrl(
             challengeData.github,
             contractRepoFilePath,
-            challengeData.name
+            `${challengeData.name}${BRANCH_SUFFIX}`
           );
 
           // Destination file path for the contract

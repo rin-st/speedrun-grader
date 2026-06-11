@@ -2,9 +2,11 @@
 /cache
 /artifacts
 
-# TypeChain files
+# TypeChain files (Hardhat 3 / @nomicfoundation/hardhat-typechain output)
 /typechain
 /typechain-types
+/types
+/artifacts-pretty
 
 # solidity-coverage files
 /coverage
